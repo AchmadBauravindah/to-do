@@ -8,7 +8,14 @@ function RenameProject({ project, setShowModal }) {
 
     return (
         <div className="RenameProject">
-            <ProjectForm handleSubmit={handleSubmit} heading="Edit project name!" value={newProjectName} setValue={setNewProjectName} setShowModal={setShowModal} confirmButtonText="Confirm" />
+            <ProjectForm
+                handleSubmit={handleSubmit}
+                heading="Edit project name!"
+                value={newProjectName}
+                setValue={setNewProjectName}
+                setShowModal={setShowModal}
+                confirmButtonText="Confirm"
+            />
         </div>
     );
 }

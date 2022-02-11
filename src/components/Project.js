@@ -12,7 +12,10 @@ function Project({ project, edit }) {
             <div className="btns">
                 {edit ? (
                     <div className="edit-delete">
-                        <span className="edit" onClick={() => setShowModal(true)}>
+                        <span
+                            className="edit"
+                            onClick={() => setShowModal(true)}
+                        >
                             <Pencil size="13" />
                         </span>
                         <span className="delete">

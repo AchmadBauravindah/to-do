@@ -1,5 +1,8 @@
 import React from "react";
-import { CalendarDate, CaretUp } from "react-bootstrap-icons";
+import {
+    CalendarDate,
+    CaretUp,
+} from "react-bootstrap-icons";
 import { calendarItems } from "../constants";
 const Calendar = () => {
     return (

@@ -15,8 +15,18 @@ function AddNewProject() {
                     <Plus size="20" />
                 </span>
             </div>
-            <Modal showModal={showModal} setShowModal={setShowModal}>
-                <ProjectForm handleSubmit={handleSubmit} heading="New project!" value={projectName} setValue={setProjectName} setShowModal={setShowModal} confirmButtonText="+ Add Project" />
+            <Modal
+                showModal={showModal}
+                setShowModal={setShowModal}
+            >
+                <ProjectForm
+                    handleSubmit={handleSubmit}
+                    heading="New project!"
+                    value={projectName}
+                    setValue={setProjectName}
+                    setShowModal={setShowModal}
+                    confirmButtonText="+ Add Project"
+                />
             </Modal>
         </div>
     );

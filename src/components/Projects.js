@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import { CaretUp, Palette, PencilFill } from "react-bootstrap-icons";
+import {
+    CaretUp,
+    Palette,
+    PencilFill,
+} from "react-bootstrap-icons";
 import AddNewProject from "./AddNewProject";
 import Project from "./Project";
 
@@ -23,8 +27,16 @@ function Projects() {
                 </div>
                 <div className="btns">
                     {showMenu && projects.length > 0 && (
-                        <span className="edit" onClick={() => setEdit((edit) => !edit)}>
-                            <PencilFill size="15" color={pencilColor} />
+                        <span
+                            className="edit"
+                            onClick={() =>
+                                setEdit((edit) => !edit)
+                            }
+                        >
+                            <PencilFill
+                                size="15"
+                                color={pencilColor}
+                            />
                         </span>
                     )}
                     <AddNewProject />
@@ -35,7 +47,11 @@ function Projects() {
             </div>
             <div className="items">
                 {projects.map((project) => (
-                    <Project project={project} key={project.id} edit={edit} />
+                    <Project
+                        project={project}
+                        key={project.id}
+                        edit={edit}
+                    />
                 ))}
             </div>
         </div>
