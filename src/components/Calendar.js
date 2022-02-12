@@ -1,10 +1,12 @@
-import React from "react";
-import {
-    CalendarDate,
-    CaretUp,
-} from "react-bootstrap-icons";
+import React, { useContext } from "react";
+import { CalendarDate, CaretUp } from "react-bootstrap-icons";
 import { calendarItems } from "../constants";
-const Calendar = () => {
+import { TodoContext } from "../context";
+
+function Calendar() {
+    // CONTEXT
+    const { setSelectedProject } = useContext(TodoContext);
+
     return (
         <div className="Calendar">
             <div className="header">
@@ -19,16 +21,18 @@ const Calendar = () => {
                 </div>
             </div>
             <div className="items">
-                {/* Untuk menampilkan semua items, menggunakan array map yang return nya nanti adalah objek */}
-                {/* Array Map ini membutuhkan key agar bisa di tampilkan dengan key yang berbeda */}
                 {calendarItems.map((item) => (
-                    <div className="item" key={item}>
+                    <div
+                        className="item"
+                        key={item}
+                        onClick={() => setSelectedProject(item)}
+                    >
                         {item}
                     </div>
                 ))}
             </div>
         </div>
     );
-};
+}
 
 export default Calendar;
