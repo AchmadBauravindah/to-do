@@ -1,24 +1,31 @@
 import React, { useRef } from "react";
+import { useSpring, animated } from "react-spring";
 
-const Modal = ({ children, showModal, setShowModal }) => {
-    // useRef() digunakan untuk mengambil elemnent yang ada pada kelas Modalnya
+function Modal({ children, showModal, setShowModal }) {
     const modalRef = useRef();
 
-    // e (event) target jika diklik maka setShowModal menjadi False
     const closeModal = (e) => {
         if (e.target === modalRef.current) {
             setShowModal(false);
         }
     };
+
+    // ANIMATION
+    const modalAnimation = useSpring({
+        opacity: showModal ? 1 : 0,
+        top: showModal ? "25%" : "0%",
+        config: { friction: 10 },
+    });
+
     return (
-        // Ini akan beernilai False jika tombol selain ref={modalRef} ditekan
         showModal && (
-            // ref={modalRef} artinya dia akan refrensi element ini kedalam variabel modalRef
             <div className="Modal" ref={modalRef} onClick={closeModal}>
-                <div className="container">{children}</div>
+                <animated.div style={modalAnimation} className="container">
+                    {children}
+                </animated.div>
             </div>
         )
     );
-};
+}
 
 export default Modal;
