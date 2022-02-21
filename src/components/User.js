@@ -7,7 +7,7 @@ const User = () => {
                 <img src={logo} alt="logo" />
             </div>
             <div className="info">
-                <p>Code Explianed</p>
+                <p>Achmad Bauravindah</p>
                 <a href="#">Logout</a>
             </div>
         </div>
